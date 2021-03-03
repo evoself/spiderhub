@@ -2,7 +2,7 @@ package models
 
 import (
 	"fmt"
-	"github.com/evoself/spiderhub/pkg/db/mongodb"
+	"spiderhub/pkg/mgo"
 	"testing"
 )
 

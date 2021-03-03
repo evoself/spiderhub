@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/evoself/spiderhub/pkg/db/mongodb"
+	"spiderhub/pkg/mgo"
 	"testing"
 )
 

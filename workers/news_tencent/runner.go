@@ -139,15 +139,16 @@ func Run() {
 	categoryMap["world"] = "国际"
 	categoryMap["milite"] = "军事"
 	categoryMap["astro"] = "星座"
-label:
+
 	for k, v := range categoryMap {
 		i := 1
 		if running == false {
 			running = true
-			goto label
+			continue
 		}
 		for running {
-			target := "https://i.news.qq.com/trpc.qqnews_web.kv_srv.kv_srv_http_proxy/list?srv_id=pc&sub_srv_id=" + k +
+			target := "https://i.news.qq.com/trpc.qqnews_web.kv_srv.kv_srv_http_proxy/list?" +
+				"srv_id=pc&sub_srv_id=" + k +
 				"&strategy=1&ext={\"pool\":[\"high\",\"top\"],\"is_filter\":10,\"check_type\":true}" +
 				"&offset=" + strconv.Itoa(i) + "&limit=199"
 			extract(target, v)

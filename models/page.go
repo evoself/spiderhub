@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/qiniu/qmgo"
 	"go.mongodb.org/mongo-driver/bson"
-	"github.com/evoself/spiderhub/pkg/db/mgo"
+	"spiderhub/pkg/mgo"
 )
 
 const pageCollection = "page"
