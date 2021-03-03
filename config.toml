@@ -1,0 +1,19 @@
+[listen]
+    port = ":7788"
+
+# Redis数据库配置
+[redis]
+    [redis.release]
+    addr = "*"
+    password = ""
+    db = 0
+    [redis.debug]
+    addr = "*"
+    password = ""
+    db = 0
+
+# mongodb数据库配置
+[mongo]
+    addr = "mongodb://122.152.202.201"
+    database = "test"
+    port = 7017
