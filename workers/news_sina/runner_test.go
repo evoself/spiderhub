@@ -1,4 +1,4 @@
-package news_tencent
+package news_sina
 
 import (
 	"spiderhub/config"
