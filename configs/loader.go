@@ -1,4 +1,4 @@
-package config
+package configs
 
 import (
 	"github.com/spf13/viper"
@@ -7,7 +7,7 @@ import (
 
 // 本地绝对路径
 func Load() {
-	viper.SetConfigFile("/Users/evoself/code/go/spiderhub/config/params.toml")
+	viper.SetConfigFile("/Users/evoself/code/go/spiderhub/configs/params.toml")
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatal(err)
 	}

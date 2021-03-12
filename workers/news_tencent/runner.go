@@ -100,8 +100,8 @@ func extract(target, category string) {
 	}
 	for _, i := range m.Data.List {
 		// https://kuaibao.qq.com/a/20201215A0A0UT00
-		//p.Url = "https://view.inews.qq.com/a/" + i.CmsID
-		p.Url = "https://view.inews.qq.com/s/" + i.CmsID
+		p.Url = "https://view.inews.qq.com/a/" + i.CmsID
+		//p.Url = "https://view.inews.qq.com/s/" + i.CmsID
 		p.Title = i.Title
 		p.Source = "腾讯"
 		p.Image = i.Img

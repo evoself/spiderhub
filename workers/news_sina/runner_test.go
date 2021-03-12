@@ -1,13 +1,13 @@
 package news_sina
 
 import (
-	"spiderhub/config"
+	"spiderhub/configs"
 	"spiderhub/pkg/mgo"
 	"testing"
 )
 
 func Test(t *testing.T) {
-	config.Load()
+	configs.Load()
 	mgo.Open()
 	Run()
 }

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"spiderhub/config"
+	"spiderhub/configs"
 	"spiderhub/pkg/mgo"
 	"spiderhub/workers/news_163"
 	"spiderhub/workers/news_sina"
@@ -12,7 +12,7 @@ import (
 )
 
 func init() {
-	config.Load()
+	configs.Load()
 	mgo.Open()
 }
 
