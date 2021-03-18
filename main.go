@@ -3,6 +3,7 @@ package main
 import (
 	"spiderhub/configs"
 	"spiderhub/pkg/mgo"
+	"spiderhub/workers/game_17173"
 	"spiderhub/workers/news_163"
 	"spiderhub/workers/news_sina"
 	"spiderhub/workers/news_sohu"
@@ -29,7 +30,7 @@ func schedule(f func(), n time.Duration) {
 
 func main() {
 	wg := sync.WaitGroup{}
-	wg.Add(4)
+	wg.Add(5)
 	go func() {
 		delay(0)
 		f := func() {
@@ -58,6 +59,14 @@ func main() {
 		delay(30)
 		f := func() {
 			news_sohu.Run()
+			wg.Done()
+		}
+		schedule(f, 10)
+	}()
+	go func() {
+		delay(40)
+		f := func() {
+			game_17173.Run()
 			wg.Done()
 		}
 		schedule(f, 10)

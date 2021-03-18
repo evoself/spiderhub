@@ -123,7 +123,7 @@ func extract(target string) {
 		if res != nil {
 			color.Green.Println(p.Source + "-" + p.Title)
 		} else {
-			color.Yellow.Println(p.Source + "-" + p.Title)
+			color.Red.Println(p.Source + "-" + p.Title)
 		}
 	}
 }
