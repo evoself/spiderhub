@@ -5,9 +5,8 @@ import (
 	"log"
 )
 
-// 本地绝对路径
 func Load() {
-	viper.SetConfigFile("/Users/evoself/code/go/spiderhub/configs/params.toml")
+	viper.SetConfigFile("*") // *替换为配置文件的本地绝对路径
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatal(err)
 	}
