@@ -3,6 +3,7 @@ package news_36kr
 import (
 	"bytes"
 	"encoding/json"
+	"github.com/gohp/goutils/color"
 	"github.com/gohp/goutils/gotime"
 	"github.com/gohp/goutils/hash"
 	"github.com/gohp/goutils/rand"
@@ -107,7 +108,12 @@ func extract(target string) {
 		p.PublishTime = gotime.FormatDatetime(tm, gotime.TT)
 		p.Hash = hash.Sha256String(p.Url)
 		p.Id = time.Now().UnixNano() + int64(rand.RandInt(100, 999))
-		p.Save()
+		res, _ := p.Save()
+		if res != nil {
+			color.Green.Println(p.Source + "-" + p.Title)
+		} else {
+			color.Red.Println(p.Source + "-" + p.Title)
+		}
 	}
 	pageCallback = m.Data.PageCallback
 	b = false

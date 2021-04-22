@@ -117,7 +117,6 @@ func extract(target, category string) {
 		} else {
 			color.Red.Println(p.Source + "-" + p.Title)
 		}
-		time.Sleep(time.Second * 1)
 	}
 }
 
